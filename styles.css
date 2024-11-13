@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.6;
+    background-color: #121212;
+    padding-top: 70px; /* Tilaa kiinteälle valikolle */
+}
+
+/* Kiinteä ylävalikko */
+header {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Kiinteä sijainti yläreunassa */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Hero-alue */
+.hero {
+    background-image: url('hero-image.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 5em 2em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.cta-button,
+form button {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 0.7em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover,
+form button:hover {
+    background-color: #d84315;
+    transform: scale(1.05);
+}
+
+/* Palvelut-osio */
+section {
+    padding: 3em;
+    text-align: center;
+}
+
+h2 {
+    color: #e0e0e0;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.service {
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 2em;
+    width: 300px;
+    max-width: 400px;
+    flex: 1 1 300px;
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.9);
+}
+
+.service img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.service h3 {
+    color: #ff5722;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+/* Tekstiosio palvelulaatikolle hover-tilassa */
+.service-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.95);
+    padding: 1em;
+    border-radius: 10px;
+    color: #f0f0f0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; /* Piilotettu oletuksena */
+    transition: opacity 0.3s ease;
+}
+
+.service:hover .service-description {
+    opacity: 1; /* Näkyviin hover-tilassa */
+}
+
+/* Asiakastarinat */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.testimonial {
+    background-color: #2a2a2a;
+    padding: 1.5em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    width: 80%;
+    max-width: 500px;
+    color: #e0e0e0;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.testimonial h4 {
+    margin-top: 1em;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+/* Hinnoittelu */
+#hinnoittelu ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+#hinnoittelu ul li {
+    background-color: #2a2a2a;
+    padding: 1em;
+    margin: 0.5em 0;
+    border-radius: 5px;
+}
+
+/* Yhteystiedot */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2em;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #222;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #ff5722;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
